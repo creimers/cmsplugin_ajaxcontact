@@ -1,0 +1,22 @@
+Hello,
+
+this is your webserver.
+
+Somebody just used the contact form on your website to leave a message.
+
+
+Name: {{ contact.name }}
+Email: {{ contact.email }}
+Telephon: {% if contact.telephone %}{{ contact.telephone }}{% else %}[not specifiec]{% endif %}
+
+Message
+------------------------
+
+{{ contact.message }}
+
+------------------------
+
+
+Best regards,
+
+your webserver.

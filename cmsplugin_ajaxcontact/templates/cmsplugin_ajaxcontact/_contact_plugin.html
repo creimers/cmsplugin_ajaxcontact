@@ -1,0 +1,48 @@
+{% load sekizai_tags staticfiles %}
+
+{% addtoblock "js" %}<script src="{% static 'cmsplugin_ajaxcontact/js/contact.js' %}"></script>{% endaddtoblock %}
+{% addtoblock "css" %}<link rel="stylesheet" href="{% static 'cmsplugin_ajaxcontact/css/style.css' %}">{% endaddtoblock %}
+
+<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+
+<div class="contacts-plugin plugin">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="inner">
+        <div class="contact-form">
+          <form method="post" action="{{ form_action }}">
+            {% csrf_token %}
+
+            {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+            {% endfor %}
+
+            {% for visible in form.visible_fields %}
+            <div class="form-group {{ visible.css_classes }}">
+              {{ visible.label_tag }}
+              <div class="error empty"></div>
+              {{ visible }}
+            </div>
+            {% endfor %}
+
+            <input type="submit" value="{{ button_text }}" class="btn btn-default">
+          </form>
+          <div class="legend"><span class="required">*</span> Pflicht-Feld</div>
+
+          <div class="errors" style="display:none"><span class="form-errors"></span></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="success" style="display:none">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="alert alert-success" role="alert">
+        <span class="glyphicon glyphicon-ok"> </span> {{ success_message }}
+      </div>
+    </div>	
+  </div>
+</div>

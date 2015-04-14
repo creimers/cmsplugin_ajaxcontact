@@ -1,0 +1,9 @@
+.required label:after{
+  content: " *";
+  color: #a00;
+}
+
+.legend{
+  margin-top: 10px;
+  color: #a00;
+}
