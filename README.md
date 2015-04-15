@@ -15,7 +15,7 @@ A djangocms ajax contact form plugin.
 
   to ``INSTALLED_APPS`` in ``settings.py``
 
-* add ``RECAPTCHA_PRIVATE_KEY`` and ``RECAPTCHA_PUPLIC_KEY`` to ``settings.py``
+* add ``RECAPTCHA_PRIVATE_KEY`` and ``RECAPTCHA_PUBLIC_KEY`` to ``settings.py``
 
 * add ``CAPTCHA_AJAX = True`` to ``settings.py``
 
