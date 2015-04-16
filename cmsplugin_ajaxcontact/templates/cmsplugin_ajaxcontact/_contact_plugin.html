@@ -1,7 +1,6 @@
 {% load sekizai_tags staticfiles %}
 
 {% addtoblock "js" %}<script src="{% static 'cmsplugin_ajaxcontact/js/contact.js' %}"></script>{% endaddtoblock %}
-{% addtoblock "css" %}<link rel="stylesheet" href="{% static 'cmsplugin_ajaxcontact/css/style.css' %}">{% endaddtoblock %}
 
 <script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
 
@@ -46,3 +45,5 @@
     </div>	
   </div>
 </div>
+
+{% addtoblock "css" %}<link rel="stylesheet" href="{% static 'cmsplugin_ajaxcontact/css/style.css' %}">{% endaddtoblock %}
